@@ -1,0 +1,485 @@
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:root{
+    --main-color: #2196f3;
+    --main-color-alt: #1787e0;
+    --main-transition: 0.3s;
+    --main-padding-top: 100px;
+    --main-padding-bottom: 100px;
+    --section-background: #ececec;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    font-family: "Cairo", sans-serif;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+/* Pequeño */
+@media (min-width: 768px) {
+    .container{
+	width: 750px;
+    }
+}
+/* Medio */
+@media (min-width: 992px) {
+    .container{
+	width: 970px;
+    }
+}
+/* Largo */
+@media (min-width: 1200px) {
+    .container{
+	width: 1170px;
+    }
+}
+
+.tituloPrincipal {
+    text-transform: uppercase;
+    margin: 0 auto 80px;
+    border: 2px solid black;
+    padding: 10px 20px;
+    font-size: 30px;
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+    transition: var(--main-transition); 
+}
+.tituloPrincipal::before,
+.tituloPrincipal::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: var(--main-color);
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.tituloPrincipal::before {
+    left: -30px; 
+}
+.tituloPrincipal::after {
+    right: -30px;
+}
+.tituloPrincipal:hover::before {
+    z-index: -1;
+    animation: left-move 0.5s linear forwards;
+}
+.tituloPrincipal:hover::after {
+    z-index: -1;
+    animation: right-move 0.5s linear forwards;
+}
+.tituloPrincipal:hover {
+    color: white;
+    border: 2px solid white;
+    transition-delay: 0.5s;
+}
+.pico {
+    position: relative;
+}
+.pico::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 30px;
+    z-index: 1;
+    background-image: linear-gradient(135deg, white 25%, transparent 25%),
+		      linear-gradient(225deg, white 25%, transparent 25%);
+    background-size: 30px 30px;
+}
+.header {
+    background-color: white;
+    position: relative;
+    -webkit-box-shadow: 0 0 10px #ddd;
+    -moz-box-shadow: 0 0 10px #ddd;
+    box-shadow: 0 0 10px  #ddd; 
+}
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+.header .logo {
+    color: var(--main-color);
+    font-size: 26px;
+    font-weight: bold;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 767px) {
+    .header .logo{
+	width: 100%;
+	height: 50px;
+    }
+}
+.header .main-nav {
+    display: flex; 
+}
+@media (max-widht: 767px){
+    .header .main-nav{
+	margin: auto;
+    }
+}
+.header .main-nav > li:hover .mega-menu {
+    opacity: 1;
+    z-index: 100;
+    top: calc(100% + 1px);
+}
+.header .main-nav > li > a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72px;
+    position: relative;
+    color: black;
+    padding: 0 30px;
+    overflow: hidden;
+    font-size: 18px;
+    transition: var(--main-transition);
+}
+@media (max-width: 767px){
+    .header .main-nav > li > a {
+	padding: 10px;
+	font-size: 14px;
+	height: 40px;
+    }
+}
+.header .main-nav > li > a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: var(--main-color);
+    top: 0;
+    left: -100%;
+    transition: var(--main-transition);
+}
+
+.header .main-nav > li > a:hover{
+    color: var(--main-color);
+    background-color: #fafafa;
+}
+.header .main-nav > li > a:hover::before{
+    left: 0;
+}
+.landing{
+    position: relative;
+}
+.landing::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -40px;
+    width: 100%;
+    height: 100%;
+    background-color: #ececec;
+    z-index: -1;
+    transform: skewY(-6deg);
+    transform-origin: top left;
+}
+.landing .container{
+    min-height: calc(100vh - 72px);
+    display: flex;
+    align-items: center;
+    padding-bottom: 120px; 
+}
+.landing .text{
+    flex: 1;
+}
+@media (max-width: 991px) {
+    .landing .text{
+	text-align: center;
+    }
+}
+.landing .text h1{
+    font-size:40px;
+    margin: 0;
+    letter-spacing: -2px; 
+}
+@media (max-width: 767px){
+    .landing .text h1{
+	font-size: 28px;
+    }
+}
+.landing .text p {
+    font-size: 23px;
+    line-height: 1.7;
+    margin: 5px 0 0;
+    color: #666;
+    max-width: 500px;
+}
+@media (max-width: 991px) {
+    .landing .text p{
+	margin: 10px auto;
+    }
+}
+@media (max-width: 767px){
+    .landing .text p{
+	font-size: 18px;
+    }
+}
+/*Aqui deberia ir el cubo que da vueltas*/
+.landing .go-down{
+    color: var(--main-color);
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: var(--main-transition);
+}
+.landing .go-down:hover{
+    color: var(--main-color-alt);
+}
+.landing .go-down i{
+    animation: bouncing 1.5s infinite;
+}
+.algoritmos {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+}
+.algoritmos .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+}
+.algoritmos .box{
+    box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+    background-color: white;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: transform var(--main-transition), box-shadow var(--main-transition);
+}
+.algoritmos .box:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
+}
+.algoritmos .box img {
+    width: 100%;
+    max-width: 100%;
+}
+.algoritmos .box .content {
+    padding: 20px;
+}
+.algoritmos .box .content h3{
+    margin: 0;
+}
+.algoritmos .box .content p {
+    margin: 10px 0 0;
+    line-height: 1.5;
+    color: #777;
+}
+.algoritmos .box .info {
+    padding: 20px;
+    border-top: 1px solid #e6e6e7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.algoritmos .box .info a {
+    color: var(--main-color);
+    font-weight: bold;
+}
+.algoritmos .box .info i{
+    color: var(--main-color);
+}
+.algoritmos .box:hover .info i {
+    animation: moving-arrow 0.6s linear infinite;
+}
+.libros {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: var(--section-background);
+}
+.libros .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+.libros .box {
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0px 12px 20px 0px rgb(0 0 0 / 13%), 0px 2px 4px 0px rgb(0 0 0 / 12%);
+}
+.libros .box .image {
+    position: relative;
+    overflow: hidden;
+}
+.libros .box .image::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255 255 255 / 20%);
+    width: 0;
+    height: 0;
+    opacity: 0;
+    z-index: 2;
+}
+.libros .box .image:hover::before {
+    animation: flashing 0.7s;
+}
+.libros .box img{
+    max-width: 100%;
+    transition: var(--main-transition); 
+}
+.libros .box .image:hover img{
+    transform: rotate(5deg) scale(1.1);
+}
+.paginas {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: white;
+}
+.paginas .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+.paginas .box{
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 7%);
+    border-radius: 6px;
+    position: relative;
+}
+.paginas .box img{
+    position: absolute;
+    right: -10px;
+    top: -50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 10px solid var(--section-background);
+}
+.paginas .box h3{
+    margin: 0 0 10px; 
+}
+.paginas .box title {
+    color: #777;
+    margin-bottom: 10px;
+    display: block; 
+}
+.paginas .box .rate .filled{
+    color: #ffc107;
+}
+.paginas .box p {
+    line-height: 1.5;
+    color: #777;
+    margin-top: 10px;
+    margin-bottom: 0; 
+}
+.otros {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+}
+.otros .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+.otros .box {
+    position: relative;
+}
+.otros .box::before,
+.otros .box::after {
+    content: "";
+    background-color: #f3f3f3;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 10px;
+    transition: var(--main-transition);
+}
+.otros .box::before {
+    width: calc(100% - 60px);
+    z-index: -2;
+}
+.otros .box::after {
+    z-index: -1;
+    background-color: #e4e4e4;
+    width: 0;
+}
+.otros .box:hover::after {
+    width: calc(100% - 60px);
+}
+.otros .box .data {
+    display: flex;
+    align-items: center;
+    padding-top: 60px;
+
+}
+.otros .box .data img {
+    width: calc(100% - 60px);
+    transition: var(--main-transition);
+    border-radius: 10px;
+}
+.otros .box:hover img {
+    filter: grayscale(100%);
+}
+.otros .box .data .social {
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.otros .box .data .social a {
+    width: 60px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.otros .box .data .social a:hover i {
+    color: var(--main-color);
+}
+.otros .box. .data .social i {
+    color: #777;
+    transition: var(--main-transition);
+}
+.otros .box .info{
+    padding-left: 80px;
+}
+.otros .box .info h3 {
+    margin-bottom: 0;
+    color: var(--main-color);
+    font-size: 22px;
+    transition: var(--main-transition);
+}
+.otros .box .info p {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+.otros .box:hover .info h3 {
+    color: #777;
+}
+/*.paginas .box*/
