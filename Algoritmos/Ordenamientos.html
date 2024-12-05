@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Web Diego</title>
+  <link rel="stylesheet" href="../css/Ordenamientos.css" >
+  <link res="stylesheet" href="../css/Color.css" >
+
+
+</head>
+
+<body>
+
+  <div class="header" id="header">
+    <div class="container">
+      <a href="#" class="logo"> Diego Vidal </a>
+      <ul class="main-nav">
+	<li><a href="../index.html#algoritmos"> Algoritmos 1 </a></li>
+	<li><a href="../index.html#libros"> Libros </a></li>
+	<li><a href="../index.html#paginas"> Paginas </a></li>
+	<li><a href="../index.html#otros"> Otros </a></li>
+      </ul>
+    </div>
+  </div>
+
+<div class="contenedor">
+        <header class="cabecera">
+            <h1>BubbleSort</h1>
+            <p>Algoritmos de Ordenamiento</p>
+        </header>
+        <div class="content">
+            <a href="#" class="github-link">View the project on GitHub</a>
+            <h2>Resumen</h2>
+            <p class="description">
+	      El algoritmo de BubbleSort es un algoritmo de ordenamiento, conocido por ser uno de lo más ineficientes que puede existir, tomando parte de una complejidad cuadrática, el algoritmo consiste en el posicionamiento de cada elemento en la posición en la que debería colocarse en orden creciente.
+	    </p>
+            <p class="description">
+	      El problema de BubbleSort radica en su idea centrar, recorremos nuestros elementos, que generalmente los vemos en forma de Arreglo o Lista. Es de esta forma que compararemos el elemento actual con el siguiente, si este es mayor que el siguiente entonces los intercambiamos de lugar. Repetiremos este proceso hasta haber recorrido cada uno de los elementos.
+            </p>
+
+	    <p class="description">
+	      A continuación tenemos el ejemplo de una implementación de BubbleSort:
+	    </p>
+            <div class="code-block">
+<pre>
+<code>
+public class BubbleSort {
+    public static void main(String[] args) {
+        int[] arr = {64, 34, 25, 12, 22, 11, 90};
+        bubbleSort(arr);
+        System.out.println("Sorted array");
+        printArray(arr);
+    }
+
+    static void bubbleSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n-1; i++) {
+            for (int j = 0; j < n-i-1; j++) {
+                if (arr[j] > arr[j+1]) {
+                    // swap arr[j] and arr[j+1]
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+    }
+
+    static void printArray(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n; ++i)
+            System.out.print(arr[i] + " ");
+        System.out.println();
+    }
+}
+</code>
+</pre>
+            </div>
+            <p class="description">
+	      Es de esta manera que podemos ver el funcionamiento de BubbleSort como algoritmo de ordenamiento 
+	    </p>
+            <img src="https://stackabuse.s3.amazonaws.com/media/bubble-sort-in-java-1.gif" alt="GIF animado" class="animated-gif">
+
+
+	    <h2> Paginas </h2>
+	    
+	    <div class="link-cards">
+	      <a href="https://sites.google.com/site/programacioniiuno/temario/unidad-6---anlisis-de-algoritmos/algoritmo-bubblesort" target="_blank" class="card">
+		<div class="preview">
+		  <img src="../Img/SitesBubble.png" alt="Vista previa de Página 1">
+		</div>
+		<h3>Algoritmo BubbleSort Sites </h3>
+		<p>En esta página podemos encontrarnos algunos ejemplos de las iteraciones y el funcionamiento de BubbleSort</p>
+	      </a>
+	      <a href="https://www.geeksforgeeks.org/bubble-sort-algorithm/" target="_blank" class="card">
+		<div class="preview">
+		  <img src="../Img/GeeksBubble.png" alt="Vista previa de Página 2">
+		</div>
+		<h3>Geeks for Geeks BubbleSort</h3>
+		<p>Aquí podemos encontrarnos una explicación del algoritmo y algunos ejemplos de su implementación en distintos lenguajes.</p>
+	      </a>
+	    </div>
+
+
+        </div>
+    </div>
+</body>
+  
+</html>

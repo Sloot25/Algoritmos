@@ -553,4 +553,24 @@ ul {
 .otros .box:hover .info h3 {
     color: #777;
 }
+
+.ImagenesDescubre {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00171f;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.BotonIr{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ab90b9;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;    
+}
 /*.paginas .box*/

@@ -1,0 +1,310 @@
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:root{
+    --main-color: #2196f3;
+    --main-color-alt: #1787e0;
+    --main-transition: 0.3s;
+    --main-padding-top: 100px;
+    --main-padding-bottom: 100px;
+    --section-background: #ececec;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    font-family: "Cairo", sans-serif;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto; 
+}
+.header {
+    background-color: white;
+    position: relative;
+    -webkit-box-shadow: 0 0 10px #ddd;
+    -moz-box-shadow: 0 0 10px #ddd;
+    box-shadow: 0 0 10px  #ddd; 
+}
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+.header .logo {
+    color: var(--main-color);
+    font-size: 26px;
+    font-weight: bold;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 767px) {
+    .header .logo{
+	width: 100%;
+	height: 50px;
+    }
+}
+.header .main-nav {
+    display: flex; 
+}
+@media (max-widht: 767px){
+    .header .main-nav{
+	margin: auto;
+    }
+}
+.header .main-nav > li:hover .mega-menu {
+    opacity: 1;
+    z-index: 100;
+    top: calc(100% + 1px);
+}
+.header .main-nav > li > a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72px;
+    position: relative;
+    color: black;
+    padding: 0 30px;
+    overflow: hidden;
+    font-size: 18px;
+    transition: var(--main-transition);
+}
+@media (max-width: 767px){
+    .header .main-nav > li > a {
+	padding: 10px;
+	font-size: 14px;
+	height: 40px;
+    }
+}
+.header .main-nav > li > a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: var(--main-color);
+    top: 0;
+    left: -100%;
+    transition: var(--main-transition);
+}
+
+.header .main-nav > li > a:hover{
+    color: var(--main-color);
+    background-color: #fafafa;
+}
+.header .main-nav > li > a:hover::before{
+    left: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+main {
+    padding: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+article {
+    background-color: #fff;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.contenedor {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Header Styles */
+.cabecera {
+    background-color: #2b2b2b;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.cabecera h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.cabecera p {
+    margin: 5px 0 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+/* Content Styles */
+.content {
+    padding: 20px;
+    line-height: 1.8;
+}
+
+.github-link {
+    display: inline-block;
+    background-color: #444;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.github-link:hover {
+    background-color: #666;
+}
+
+h2 {
+    font-size: 20px;
+    color: #333;
+    border-left: 5px solid #0078d4;
+    padding-left: 10px;
+    margin-top: 20px;
+}
+
+.description {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* Code Block Styles */
+.code-block {
+    background-color: #1e1e1e;
+    color: #dcdcdc;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    padding: 15px;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 20px 0;
+    border-left: 4px solid #0078d4;
+}
+
+.code-block code {
+    white-space: pre;
+    display: block;
+}
+.animated-gif {
+    display: block;
+    margin: 20px auto; /* Centra el GIF horizontalmente */
+    max-width: 100%;   /* Asegura que el GIF no exceda el ancho del contenedor */
+    height: auto;      /* Mantén las proporciones del GIF */
+    border-radius: 8px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opcional: sombra alrededor del GIF */
+}
+.link-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    display: block;
+    text-decoration: none;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* Para evitar que la imagen sobresalga */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.preview img {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho del contenedor */
+    height: auto;
+    display: block;
+}
+
+.card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #0078d4;
+    padding: 0 10px;
+}
+
+.card p {
+    margin: 0 10px 10px;
+    font-size: 14px;
+    color: #555;
+}
+.preview {
+    width: 100%;
+    height: 150px; /* Ajusta el alto según sea necesario */
+    overflow: hidden; /* Evita que el contenido se desborde */
+    border-bottom: 1px solid #ddd;
+}
+
+.preview iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+
