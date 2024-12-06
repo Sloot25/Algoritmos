@@ -103,12 +103,475 @@ public class BubbleSort {
 	    </div>
 
 	    <div class="video-container">
-	      <iframe width="560" height="315" src="https://www.youtube.com/embed/xli_FI7CuzA?si=3sDdKkEAhyimPY5k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	      <iframe width="560" height="315" src="https://www.youtube.com/embed/pqZ04TT15PQ?si=txPq7QxVKMEPZVzX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 	    </div>
 
 
+        </div>	
+</div>
+
+
+<div class="contenedor">
+        <header class="cabecera">
+            <h1>SelectionSort</h1>
+            <p>Algoritmos de Ordenamiento</p>
+        </header>
+        <div class="content">
+            <a href="#" class="github-link">View the project on GitHub</a>
+            <h2>Resumen</h2>
+            <p class="description">
+	      El algoritmo de SelectionSort es un algoritmo de ordenamiento, conocido por ser uno de lo más ineficientes que puede existir, tomando parte de una complejidad cuadrática, si bien el algoritmo es cuadratico al igual que BubbleSort, Selectionsort es un algoritmo más rapido que BubbleSort
+	    </p>
+            <p class="description">
+	      SelectionSort no consiste en una comparación a pares durante n veces para ordenar los elementos, la idea central de selectionSort consiste en ordenar cada uno de los elementos en orden creciente, es decir, en primer instancia ordenaremos los menos y posicionandolos en su respectivo orden, haciendo que busquemos el minimo de los elementos restantes y lo coloquemos en la posición actual.
+	    </p>
+
+	    <p class="description">
+	      A continuación tenemos el ejemplo de una implementación de SelectionSort:
+	    </p>
+            <div class="code-block">
+<pre>
+  <code>
+    public class SelectionSort {
+    public static void selectionSort(int[] arr) {
+        int n = arr.length;
+
+        for (int i = 0; i < n - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+
+            // Intercambiar el elemento mínimo con el primer elemento
+            int temp = arr[minIndex];
+            arr[minIndex] = arr[i];
+            arr[i] = temp;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {64, 25, 12, 22, 11};
+        System.out.println("Array original:");
+        printArray(arr);
+
+        selectionSort(arr);
+
+        System.out.println("Array ordenado:");
+        printArray(arr);
+    }
+
+    public static void printArray(int[] arr) {
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+}
+</code>
+</pre>
+            </div>
+            <p class="description">
+	      Es de esta manera que podemos ver el funcionamiento de QuickSort como algoritmo de ordenamiento 
+	    </p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Sorting_selection_sort_anim.gif" alt="GIF animado" class="animated-gif">
+
+
+	    <h2> Paginas </h2>
+	    
+	    <div class="link-cards">
+	      <a href="https://es.khanacademy.org/computing/computer-science/algorithms/sorting-algorithms/a/analysis-of-selection-sort" target="_blank" class="card">
+		<div class="preview">
+		  <img src="../Img/SitesSelection.png" alt="Vista previa de Página 21">
+		</div>
+		<h3>Algoritmo SelectionSort Khanacademy </h3>
+		<p>En esta página podemos encontrarnos algunos ejemplos de las iteraciones y el funcionamiento de BubbleSort</p>
+	      </a>
+	      <a href="https://www.geeksforgeeks.org/selection-sort-algorithm-2/" target="_blank" class="card">
+		<div class="preview">
+		  <img src="../Img/GeeksSelection.png" alt="Vista previa de Página 2">
+		</div>
+		<h3>Geeks for Geeks SelectionSort</h3>
+		<p>Aquí podemos encontrarnos una explicación del algoritmo y algunos ejemplos de su implementación en distintos lenguajes.</p>
+	      </a>
+	    </div>
+
+	    <div class="video-container">
+	      <iframe width="560" height="315" src="https://www.youtube.com/embed/g-PGLbMth_g?si=AzWu_ESXoYFAjPQe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	    </div>
         </div>
-    </div>
+
+	
+</div>
+
+
+<div class="contenedor">
+        <header class="cabecera">
+            <h1>QuickSort</h1>
+            <p>Algoritmos de Ordenamiento</p>
+        </header>
+        <div class="content">
+            <a href="#" class="github-link">View the project on GitHub</a>
+            <h2>Resumen</h2>
+            <p class="description">
+	      El algoritmo de QuickSort es un algoritmo de ordenamiento, conocido por todos, como podemos imaginar por su nombre, es un algoritmo rapido, si bien su complejidad sigue siendo cuadratica en el peor de los casos, en el caso promedio tenemos una complejidad dada por O(n log n)
+	    </p>
+            <p class="description">
+	      QuickSort es un algoritmo que depende de la suerte, el algoritmo consiste en tomar un pivote, a partir del cual separaremos a los elementos en los menores al pivote y los mayores al pivote. Al haber terminado eso es que realizaremos recursión en los elementos a la izquierda y a la derecha hasta que lleguemos a un unico elemento. 
+	    </p>
+	    <p class="description">
+	      Es por ello que podemos notar donde esta nuestra aleatoriedad, y esto se encuentra en la toma de nuestro pivote. Por ello es que en el peor de los casos tendremos un selectionSort.
+	    </p>
+	    <p class="description">
+	      A continuación tenemos el ejemplo de una implementación de QuickSort:
+	    </p>
+            <div class="code-block">
+<pre>
+  <code>
+    public class QuickSort {
+    public static void quickSort(int[] arr, int low, int high) {
+        if (low < high) {
+            int pi = partition(arr, low, high);
+
+            quickSort(arr, low, pi - 1);
+            quickSort(arr, pi + 1, high);
+        }
+    }
+
+    private static int partition(int[] arr, int low, int high) {
+        int pivot = arr[high];
+        int i = (low - 1);
+        for (int j = low; j < high; j++) {
+            if (arr[j] < pivot) {
+                i++;
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+
+        int temp = arr[i + 1];
+        arr[i + 1] = arr[high];
+        arr[high] = temp;
+
+        return i + 1;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {10, 7, 8, 9, 1, 5};
+        int n = arr.length;
+
+        System.out.println("Array original:");
+        printArray(arr);
+
+        quickSort(arr, 0, n - 1);
+
+        System.out.println("Array ordenado:");
+        printArray(arr);
+    }
+
+    public static void printArray(int[] arr) {
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+}
+</code>
+</pre>
+            </div>
+            <p class="description">
+	      Es de esta manera que podemos ver el funcionamiento de QuickSort como algoritmo de ordenamiento 
+	    </p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif" alt="GIF animado" class="animated-gif">
+
+
+	    <h2> Paginas </h2>
+	    
+	    <div class="link-cards">
+	      <a href="https://asimov.cloud/blog/programacion-5/que-es-el-algoritmo-quicksort-275" target="_blank" class="card">
+		<div class="preview">
+		  <img src="../Img/QuickAsimov.png" alt="Vista previa de Página 21">
+		</div>
+		<h3>Algoritmo QuickSort Asimov </h3>
+		<p>En esta página podemos encontrarnos una explicación sobre QuickSort, así como sus ventajas y desventajas</p>
+	      </a>
+	      <a href="https://www.geeksforgeeks.org/quick-sort-algorithm/" target="_blank" class="card">
+		<div class="preview">
+		  <img src="../Img/GeeksQuick.png" alt="Vista previa de Página 2">
+		</div>
+		<h3>Geeks for Geeks QuickSort</h3>
+		<p>Aquí podemos encontrarnos una explicación del algoritmo y algunos ejemplos de su implementación en distintos lenguajes.</p>
+	      </a>
+	    </div>
+
+	    <div class="video-container">
+	      <iframe width="560" height="315" src="https://www.youtube.com/embed/UrPJLhKF1jY?si=UUWwPp6TFsa6uRP1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	    </div>
+        </div>
+
+	
+</div>
+
+
+<div class="contenedor">
+        <header class="cabecera">
+            <h1>MergeSort</h1>
+            <p>Algoritmos de Ordenamiento</p>
+        </header>
+        <div class="content">
+            <a href="#" class="github-link">View the project on GitHub</a>
+            <h2>Resumen</h2>
+            <p class="description">
+	      El algoritmo MergeSort es un algoritmo de ordenamiento que nos toma tiempo n log n, si bien en el caso promedio nos toma más tiempo que QuickSort, en el peor caso nos toma menos tiempo, siendo de esta manera que el algoritmo tiene complejidad logaritmica.
+	    </p>
+            <p class="description">
+	      MergeSort consiste en la división de nuestros elementos en dos partes, las cuales van a ser divididas y se les aplicará recursión hasta que solo nos queden listas de un unico elemento. Es en este momento donde nos encargararemos de unir las dos listas resultantes de tal manera que la unión de estas sea ordenada, sabiendo que unir dos listas ordenadas nos toma tiempo lineal, es facil ver que la complejidad de este algoritmo está dada por n log n.
+	    </p>
+
+	    <p class="description">
+	      A continuación tenemos el ejemplo de una implementación de MergeSort:
+	    </p>
+            <div class="code-block">
+<pre>
+  <code>
+   public class MergeSort {
+
+    public static void mergeSort(int[] arr, int left, int right) {
+        if (left < right) {
+            int mid = (left + right) / 2;
+
+            // Ordenar la primera y segunda mitad
+            mergeSort(arr, left, mid);
+            mergeSort(arr, mid + 1, right);
+
+            // Fusionar las mitades ordenadas
+            merge(arr, left, mid, right);
+        }
+    }
+
+    private static void merge(int[] arr, int left, int mid, int right) {
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
+
+        // Crear arreglos temporales
+        int[] L = new int[n1];
+        int[] R = new int[n2];
+
+        // Copiar datos a los arreglos temporales
+        for (int i = 0; i < n1; ++i)
+            L[i] = arr[left + i];
+        for (int j = 0; j < n2; ++j)
+            R[j] = arr[mid + 1 + j];
+
+        // Fusionar los arreglos temporales
+
+        int i = 0, j = 0;
+
+        // Índice inicial del subarreglo fusionado
+        int k = left;
+        while (i < n1 && j < n2) {
+            if (L[i] <= R[j]) {
+                arr[k] = L[i];
+                i++;
+            } else {
+                arr[k] = R[j];
+                j++;
+            }
+            k++;
+        }
+
+        // Copiar los elementos restantes de L[], si hay alguno
+        while (i < n1) {
+            arr[k] = L[i];
+            i++;
+            k++;
+        }
+
+        // Copiar los elementos restantes de R[], si hay alguno
+        while (j < n2) {
+            arr[k] = R[j];
+            j++;
+            k++;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {12, 11, 13, 5, 6, 7};
+        System.out.println("Array original:");
+        printArray(arr);
+
+        mergeSort(arr, 0, arr.length - 1);
+
+        System.out.println("Array ordenado:");
+        printArray(arr);
+    }
+
+    public static void printArray(int[] arr) {
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+}
+</code>
+</pre>
+            </div>
+            <p class="description">
+	      Es de esta manera que podemos ver el funcionamiento de MergeSort como algoritmo de ordenamiento 
+	    </p>
+            <img src="https://static.swpanel.com/doc/2022/images/0415/0415_004.gif" alt="GIF animado" class="animated-gif">
+
+
+	    <h2> Paginas </h2>
+	    
+	    <div class="link-cards">
+	      <a href="https://sites.google.com/site/programacioniiuno/temario/unidad-6---anlisis-de-algoritmos/algoritmo-mergesort" target="_blank" class="card">
+		<div class="preview">
+		  <img src="../Img/SiteMerge.png" alt="Vista previa de Página 21">
+		</div>
+		<h3>Algoritmo MergeSort Site </h3>
+		<p>En esta página podemos encontrarnos algunos ejemplos de las iteraciones y el funcionamiento de MergeSort</p>
+	      </a>
+	      <a href="https://www.geeksforgeeks.org/merge-sort/" target="_blank" class="card">
+		<div class="preview">
+		  <img src="../Img/GeeksMerge.png" alt="Vista previa de Página 2">
+		</div>
+		<h3>Geeks for Geeks MergeSort</h3>
+		<p>Aquí podemos encontrarnos una explicación del algoritmo y algunos ejemplos de su implementación en distintos lenguajes.</p>
+	      </a>
+	    </div>
+
+	    <div class="video-container">
+	      <iframe width="560" height="315" src="https://www.youtube.com/embed/ACFZn_xQcz8?si=yPseiMkymMoU8dUF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	    </div>
+        </div>
+
+	
+</div>
+
+
+
+<div class="contenedor">
+        <header class="cabecera">
+            <h1>CountingSort</h1>
+            <p>Algoritmos de Ordenamiento</p>
+        </header>
+        <div class="content">
+            <a href="#" class="github-link">View the project on GitHub</a>
+            <h2>Resumen</h2>
+            <p class="description">
+	      A diferencia de los otros algoritmos basados en comparaciones, este algoritmo usa condiciones previas para poder asegurar un ordenamiento en tiempo lineal. Estas condiciones previas consisten en saber la cota superior de los elementos y estos puedan compararse con enteros.
+	    </p>
+            <p class="description">
+	      CountingSort consiste en que al saber el numero maximo que se puede encontrar en nuestros elementos, entonces crearemos un arreglo desde 0 hasta el maximo y recorreremos cada uno de los elementos posicionandolos en la casilla correspondiente a su representación entera. Posteriormente recorreremos este arreglo recuperando los elementos
+	    </p>
+
+	    <p class="description">
+	      A continuación tenemos el ejemplo de una implementación de BucketSort:
+	    </p>
+            <div class="code-block">
+<pre>
+  <code>
+    public class CountingSort {
+    public static void countingSort(int[] arr) {
+        int n = arr.length;
+
+        if (n == 0) {
+            return;
+        }
+
+        // Encuentra el valor máximo en el array
+        int max = arr[0];
+        for (int i = 1; i < n; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+
+        // Inicializa el array de conteo
+        int[] count = new int[max + 1];
+
+        // Almacena el conteo de cada valor
+        for (int i = 0; i < n; i++) {
+            count[arr[i]]++;
+        }
+
+        // Modifica el array de conteo
+        for (int i = 1; i <= max; i++) {
+            count[i] += count[i - 1];
+        }
+
+        // Construye el array ordenado
+        int[] output = new int[n];
+        for (int i = n - 1; i >= 0; i--) {
+            output[count[arr[i]] - 1] = arr[i];
+            count[arr[i]]--;
+        }
+
+        // Copia el array ordenado al array original
+        for (int i = 0; i < n; i++) {
+            arr[i] = output[i];
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {4, 2, 2, 8, 3, 3, 1};
+        System.out.println("Array original:");
+        printArray(arr);
+
+        countingSort(arr);
+
+        System.out.println("Array ordenado:");
+        printArray(arr);
+    }
+
+    public static void printArray(int[] arr) {
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+}
+</code>
+</pre>
+            </div>
+            <p class="description">
+	      Es de esta manera que podemos ver el funcionamiento de CountingSort como algoritmo de ordenamiento 
+	    </p>
+            <img src="https://media.tenor.com/zswbYsLbYqEAAAAe/counting-sort.png" alt="GIF animado" class="animated-gif">
+
+
+	    <h2> Paginas </h2>
+	    
+	    <div class="link-cards">
+	      <a href="https://www.w3schools.com/dsa/dsa_algo_countingsort.php" target="_blank" class="card">
+		<div class="preview">
+		  <img src="../Img/SiteCounting.png" alt="Vista previa de Página 21">
+		</div>
+		<h3>Algoritmo CountingSort W3Schools </h3>
+		<p>En esta página podemos encontrarnos algunos ejemplos de las iteraciones y el funcionamiento de BubbleSort</p>
+	      </a>
+	      <a href="https://www.geeksforgeeks.org/counting-sort/" class="card">
+		<div class="preview">
+		  <img src="../Img/GeeksCounting.png" alt="Vista previa de Página 2">
+		</div>
+		<h3>Geeks for Geeks CountingSort</h3>
+		<p>Aquí podemos encontrarnos una explicación del algoritmo y algunos ejemplos de su implementación en distintos lenguajes.</p>
+	      </a>
+	    </div>
+
+	    <div class="video-container">
+	      <iframe width="560" height="315" src="https://www.youtube.com/embed/x-Yo8zAy9Uw?si=FopljcSeY7aKMl59" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	    </div>
+        </div>
+
+	
+</div>
+
+
+
 </body>
   
 </html>

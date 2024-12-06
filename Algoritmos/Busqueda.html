@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Web Diego</title>
+  <link rel="stylesheet" href="../css/Ordenamientos.css" >
+  <link res="stylesheet" href="../css/Color.css" >
+
+
+</head>
+
+<body>
+
+  <div class="header" id="header">
+    <div class="container">
+      <a href="#" class="logo"> Diego Vidal </a>
+      <ul class="main-nav">
+	<li><a href="../index.html#algoritmos"> Algoritmos 1 </a></li>
+	<li><a href="../index.html#libros"> Libros </a></li>
+	<li><a href="../index.html#paginas"> Paginas </a></li>
+	<li><a href="../index.html#otros"> Otros </a></li>
+      </ul>
+    </div>
+  </div>
+
+<div class="contenedor">
+        <header class="cabecera">
+            <h1> Binary Search Tree </h1>
+            <p>Estructura de busqueda</p>
+        </header>
+        <div class="content">
+            <a href="#" class="github-link">View the project on GitHub</a>
+            <h2>Resumen</h2>
+            <p class="description">
+	      Si bien la estructura fue pensada para mantener los elementos dentro de manera ordenada, la finalidad de esto fue optimizar la busqueda de elementos de tal manera que podamos hacer consultas de un elemento en particular en menor tiempo.
+	    </p>
+            <p class="description">
+	       La idea de la estrructura es simple. El elemento del hijo izquierdo de un nodo tiene la caracteristica de ser menor o igual al elemento de su padre. El hijo derecho de un nodo tiene la caracteristica de ser mayor o igual a su padre.
+	    </p>
+	    <p class="description">
+	      Es de esta manera que podemos ver que la busqueda dentro de esta estructura nos tomará tiempo logaritmico en un caso promedio que la estructura se encuentre balanceada. Mientras que en el peor caso  la busqueda nos seguira tomando tiempo lineal debido a que se trata de un arbol con una sola rama
+	    </p>
+	    
+            </div>
+            <p class="description">
+	      Es de esta manera que podemos ver como se comporta la busqueda:  
+	    </p>
+            <img src="https://compilandoconocimiento.com/wp-content/uploads/2017/01/busqueda.gif?w=275&h=206" class="animated-gif">
+
+
+	    <h2> Paginas </h2>
+	    
+	    <div class="link-cards">
+	      <a href="https://www.w3schools.com/dsa/dsa_data_binarysearchtrees.php" target="_blank" class="card">
+		<div class="preview">
+		  <img src="../Img/SiteBST.png" alt="Vista previa de Página 1">
+		</div>
+		<h3> BST W3Schools </h3>
+		<p>En esta página podemos encontrarnos una breve explicación sobre los BST</p>
+	      </a>
+	      <a href="https://www.geeksforgeeks.org/binary-search-tree-data-structure/" target="_blank" class="card">
+		<div class="preview">
+		  <img src="../Img/GeeksBST.png" alt="Vista previa de Página 2">
+		</div>
+		<h3>Geeks for Geeks BST</h3>
+		<p>Aquí podemos encontrarnos una explicación de la estructura y algunos ejemplos de su implementación en distintos lenguajes.</p>
+	      </a>
+	    </div>
+
+	    <div class="video-container">
+	      <iframe width="560" height="315" src="https://www.youtube.com/embed/G1VS5FbtMS4?si=rtvqZ6gvJbIZb2Co" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	    </div>
+
+
+        </div>	
+</div>
+
+<div class="contenedor">
+        <header class="cabecera">
+            <h1> AVL Tree </h1>
+            <p>Estructura de busqueda</p>
+        </header>
+        <div class="content">
+            <a href="#" class="github-link">View the project on GitHub</a>
+            <h2>Resumen</h2>
+            <p class="description">
+	      Los AVL vienen a solucionar uno de los problemas que surgen al usar los BST y es que al no poder balancear los arboles, la busqueda se realiza en tiempo lineal. De esta manera es que solucionamos el problema realizando el balanceo del arbol.
+	    </p>
+            <p class="description">
+	      Continuando la idea del BST original, la estructura se comporta de la misma manera, solo que ahora tenemos que asegurarnos de garantizar que la diferencia en las alturas de cualquier nodo no tiene que ser mayor a 1.
+	    </p>
+	    <p class="description">
+	      Es de esta manera que podemos notar que la busqueda se realiza en tiempo logaritmico, debido a que el arbol garantiza estar balanceado.
+	    </p>
+	    
+            </div>
+            <p class="description">
+	      Es de esta manera que podemos ver como se comporta el balanceo:  
+	    </p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Rebalance_animation_simple.gif" class="animated-gif">
+
+
+	    <h2> Paginas </h2>
+	    
+	    <div class="link-cards">
+	      <a href="https://www.w3schools.com/dsa/dsa_data_binarysearchtrees.php" target="_blank" class="card">
+		<div class="preview">
+		  <img src="../Img/SiteBST.png" alt="Vista previa de Página 1">
+		</div>
+		<h3> BST W3Schools </h3>
+		<p>En esta página podemos encontrarnos una breve explicación sobre los BST</p>
+	      </a>
+	      <a href="https://www.geeksforgeeks.org/binary-search-tree-data-structure/" target="_blank" class="card">
+		<div class="preview">
+		  <img src="../Img/GeeksBST.png" alt="Vista previa de Página 2">
+		</div>
+		<h3>Geeks for Geeks BST</h3>
+		<p>Aquí podemos encontrarnos una explicación de la estructura y algunos ejemplos de su implementación en distintos lenguajes.</p>
+	      </a>
+	    </div>
+
+	    <div class="video-container">
+	      <iframe width="560" height="315" src="https://www.youtube.com/embed/G1VS5FbtMS4?si=rtvqZ6gvJbIZb2Co" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	    </div>
+
+
+        </div>	
+</div>
+
+
+</body>
+</html>
