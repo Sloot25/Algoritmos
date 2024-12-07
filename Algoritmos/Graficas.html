@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Web Diego</title>
+  <link rel="stylesheet" href="../css/Ordenamientos.css" >
+  <link res="stylesheet" href="../css/Color.css" >
+
+
+</head>
+
+<body>
+
+  <div class="header" id="header">
+    <div class="container">
+      <a href="#" class="logo"> Diego Vidal </a>
+      <ul class="main-nav">
+	<li><a href="../index.html#algoritmos"> Algoritmos 1 </a></li>
+	<li><a href="../index.html#libros"> Libros </a></li>
+	<li><a href="../index.html#paginas"> Paginas </a></li>
+	<li><a href="../index.html#otros"> Otros </a></li>
+      </ul>
+    </div>
+  </div>
+
+<div class="contenedor">
+        <header class="cabecera">
+            <h1>BFS</h1>
+            <p>Algoritmos de Graficas</p>
+        </header>
+        <div class="content">
+            <a href="#" class="github-link">View the project on GitHub</a>
+            <h2>Resumen</h2>
+            <p class="description">
+	      Entre los algoritmos de Gráficas podemos encontrarnos a los algoritmos BFS, este es un algoritmo de busqueda por amplitud, encargado de recorrer cada uno de los nodos de la gráfica una unica vez. 
+	    </p>
+            <p class="description">
+	      El algoritmo consiste en tomar una Cola a la cual añadiremos nuestro primer nodo, posteriormente mientras tengamos elementos en la cola, sacaremos un elemento de la cola, para posteriormente marcarlo como visitado y realizar las acciones propias que queramos hacer durante el BFS, posteriormente meteremos a todos los nodos que no esten marcados como visitados y tengan una arista con el nodo actual.
+            </p>
+
+	    <p class="description">
+	      A continuación tenemos un ejemplo de la implementación en Java:
+	    </p>
+            <div class="code-block">
+<pre>
+  <code>
+    import java.util.*;
+
+class Graph {
+    private int V;   // No. of vertices
+    private LinkedList<Integer> adj[]; // Adjacency Lists
+
+    // Constructor
+    Graph(int v) {
+        V = v;
+        adj = new LinkedList[v];
+        for (int i = 0; i < v; ++i)
+            adj[i] = new LinkedList();
+    }
+
+    // Function to add an edge into the graph
+    void addEdge(int v, int w) {
+        adj[v].add(w);
+    }
+
+    // prints BFS traversal from a given source s
+    void BFS(int s) {
+        // Mark all the vertices as not visited(By default set as false)
+        boolean visited[] = new boolean[V];
+
+        // Create a queue for BFS
+        LinkedList<Integer> queue = new LinkedList<Integer>();
+
+        // Mark the current node as visited and enqueue it
+        visited[s] = true;
+        queue.add(s);
+
+        while (queue.size() != 0) {
+            // Dequeue a vertex from queue and print it
+            s = queue.poll();
+            System.out.print(s + " ");
+
+            // Get all adjacent vertices of the dequeued vertex s
+            // If an adjacent has not been visited, then mark it visited and enqueue it
+            Iterator<Integer> i = adj[s].listIterator();
+            while (i.hasNext()) {
+                int n = i.next();
+                if (!visited[n]) {
+                    visited[n] = true;
+                    queue.add(n);
+                }
+            }
+        }
+    }
+
+    // Driver method to test above
+    public static void main(String args[]) {
+        Graph g = new Graph(4);
+
+        g.addEdge(0, 1);
+        g.addEdge(0, 2);
+        g.addEdge(1, 2);
+        g.addEdge(2, 0);
+        g.addEdge(2, 3);
+        g.addEdge(3, 3);
+
+        System.out.println("Following is Breadth First Traversal " +
+                "(starting from vertex 2)");
+
+        g.BFS(2);
+    }
+}
+</code>
+</pre>
+            </div>
+            <p class="description">
+	      Es de esta manera que podemos ver el funcionamiento:	    </p>
+            <img src="https://codeabbey.github.io/data/breadth_first_search_1.gif" alt="GIF animado" class="animated-gif">
+
+
+	    <h2> Paginas </h2>
+	    
+	    <div class="link-cards">
+	      <a href="https://publish.obsidian.md/algoritmos/Algoritmos+sobre+grafos/Recorridas/BFS" target="_blank" class="card">
+		<div class="preview">
+		  <img src="../Img/SiteBFS.png" alt="Vista previa de Página 1">
+		</div>
+		<h3>Algoritmo BFS </h3>
+		<p>En esta página podemos encontrarnos la explicación de BFS</p>
+	      </a>
+	      <a href="https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/" target="_blank" class="card">
+		<div class="preview">
+		  <img src="../Img/GeeksBFS.png" alt="Vista previa de Página 2">
+		</div>
+		<h3>Geeks for Geeks BFS</h3>
+		<p>Aquí podemos encontrarnos una explicación del algoritmo y algunos ejemplos de su implementación en distintos lenguajes.</p>
+	      </a>
+	    </div>
+
+	    <div class="video-container">
+	      <iframe width="560" height="315" src="https://www.youtube.com/embed/qiZRzmP0LzU?si=m3_vR5Aib2lFV4tj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	    </div>
+
+
+        </div>	
+</div>
+
+<div class="contenedor">
+        <header class="cabecera">
+            <h1>DFS</h1>
+            <p>Algoritmos de Graficas</p>
+        </header>
+        <div class="content">
+            <a href="#" class="github-link">View the project on GitHub</a>
+            <h2>Resumen</h2>
+            <p class="description">
+	      Entre los algoritmos de Gráficas podemos encontrarnos a los algoritmos DFS, este es un algoritmo de busqueda por profundidad, encargado de recorrer cada uno de los nodos de la gráfica una unica vez. 
+	    </p>
+            <p class="description">
+	      El algoritmo consiste en tomar una Pila a la cual añadiremos nuestro primer nodo, posteriormente mientras tengamos elementos en la Pila, sacaremos un elemento de la pila, para posteriormente marcarlo como visitado y realizar las acciones propias que queramos hacer durante el DFS, posteriormente meteremos a todos los nodos que no esten marcados como visitados y tengan una arista con el nodo actual.
+            </p>
+
+	    <p class="description">
+	      A continuación tenemos un ejemplo de la implementación en Java:
+	    </p>
+            <div class="code-block">
+<pre>
+  <code>
+    import java.util.*;
+
+class Graph {
+    private int V;   // No. of vertices
+    private LinkedList<Integer> adj[]; // Adjacency Lists
+
+    // Constructor
+    Graph(int v) {
+        V = v;
+        adj = new LinkedList[v];
+        for (int i = 0; i < v; ++i)
+            adj[i] = new LinkedList();
+    }
+
+    // Function to add an edge into the graph
+    void addEdge(int v, int w) {
+        adj[v].add(w);
+    }
+
+    // A function used by DFS
+    void DFSUtil(int v, boolean visited[]) {
+        // Mark the current node as visited and print it
+        visited[v] = true;
+        System.out.print(v + " ");
+
+        // Recur for all the vertices adjacent to this vertex
+        Iterator<Integer> i = adj[v].listIterator();
+        while (i.hasNext()) {
+            int n = i.next();
+            if (!visited[n])
+                DFSUtil(n, visited);
+        }
+    }
+
+    // The function to do DFS traversal. It uses recursive DFSUtil()
+    void DFS(int v) {
+        // Mark all the vertices as not visited (set as false by default in Java)
+        boolean visited[] = new boolean[V];
+
+        // Call the recursive helper function to print DFS traversal
+        DFSUtil(v, visited);
+    }
+
+    // Driver method to test above
+    public static void main(String args[]) {
+        Graph g = new Graph(4);
+
+        g.addEdge(0, 1);
+        g.addEdge(0, 2);
+        g.addEdge(1, 2);
+        g.addEdge(2, 0);
+        g.addEdge(2, 3);
+        g.addEdge(3, 3);
+
+        System.out.println("Following is Depth First Traversal " +
+                "(starting from vertex 2)");
+
+        g.DFS(2);
+    }
+}
+</code>
+</pre>
+            </div>
+            <p class="description">
+	      Es de esta manera que podemos ver el funcionamiento:	    </p>
+            <img src="https://oliviagallucci.com/wp-content/uploads/2024/01/dfs.gif" alt="GIF animado" class="animated-gif">
+
+
+	    <h2> Paginas </h2>
+	    
+	    <div class="link-cards">
+	      <a href="https://www.simplilearn.com/tutorials/data-structure-tutorial/dfs-algorithm" target="_blank" class="card">
+		<div class="preview">
+		  <img src="../Img/SiteDFS.png" alt="Vista previa de Página 1">
+		</div>
+		<h3>Algoritmo DFS </h3>
+		<p>En esta página podemos encontrarnos la explicación de BFS</p>
+	      </a>
+	      <a href="https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/" target="_blank" class="card">
+		<div class="preview">
+		  <img src="../Img/GeeksDFS.png" alt="Vista previa de Página 2">
+		</div>
+		<h3>Geeks for Geeks DFS</h3>
+		<p>Aquí podemos encontrarnos una explicación del algoritmo y algunos ejemplos de su implementación en distintos lenguajes.</p>
+	      </a>
+	    </div>
+
+	    <div class="video-container">
+	      <iframe width="560" height="315" src="https://www.youtube.com/embed/qiZRzmP0LzU?si=m3_vR5Aib2lFV4tj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	    </div>
+
+
+        </div>	
+</div>
+
+
+</body>
+</html>
